@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>فراخوان پذیرش همکار – کارشناسی امور مالی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>فراخوان پذیرش همکار</h1>
+    <p>واحد امور مالی – سال ۱۴۰۳</p>
+  </header>
+
+  <main>
+    <section class="desc">
+      <h2>شرایط و اطلاعیه</h2>
+      <ul>
+        <li>مدرک تحصیلی: حداقل کارشناسی حسابداری، مدیریت مالی یا رشته‌های مرتبط</li>
+        <li>تسلط به نرم‌افزارهای Office و حسابداری (ترجیحاً هلو/سپیدار)</li>
+        <li>حداقل ۲ سال سابقه مفید مالی</li>
+        <li>تعهد کاری تمام‌وقت</li>
+      </ul>
+    </section>
+
+    <form id="applyForm">
+      <h2>فرم ثبت‌نام</h2>
+
+      <label>نام و نام‌خانوادگی*
+        <input type="text" name="fullname" required />
+      </label>
+
+      <label>کد ملی*
+        <input type="text" name="nationalId" maxlength="10"
+               pattern="\d{10}" required />
+      </label>
+
+      <label>شماره موبایل*
+        <input type="tel" name="mobile" maxlength="11"
+               pattern="09\d{9}" required />
+      </label>
+
+      <label>آپلود رزومه (PDF حداکثر ۲ مگابایت)*
+        <input type="file" name="resume" accept=".pdf" required />
+      </label>
+
+      <label>توضیحات تکمیلی (اختیاری)
+        <textarea name="note" rows="3"></textarea>
+      </label>
+
+      <button type="submit">ارسال درخواست</button>
+      <p id="msg" class="hidden"></p>
+    </form>
+
+    <section id="qr">
+      <h2>اشتراک‌گذاری سریع</h2>
+      <img id="qrImg" alt="QR Code">
+    </section>
+  </main>
+
+  <footer>
+    <p>© ۱۴۰۳ – تمامی حقوق برای واحد امور مالی محفوظ است</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
