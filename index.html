@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سامانه فراخوان همکاران – امور مالی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- صفحه ورود -->
+  <section id="loginSection" class="section center">
+    <div class="card login-card">
+      <i class="bx bxs-user-check"></i>
+      <h2>ورود همکاران</h2>
+      <form id="loginForm">
+        <label>شماره پرسنلی
+          <input type="text" id="personnelId" placeholder="مثلاً 10123" pattern="\d{5,6}" required>
+        </label>
+        <button type="submit" class="btn">ورود</button>
+        <p id="loginMsg" class="msg hidden"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- داشبورد -->
+  <section id="dashboardSection" class="hidden">
+    <nav class="top-nav">
+      <span>سلام، <b id="userName"></b></span>
+      <button class="btn-text" id="logoutBtn">خروج</button>
+    </nav>
+
+    <header class="hero">
+      <h1>فراخوان جذب همکار</h1>
+      <p>واحد امور مالی – قرارداد تمام‌وقت</p>
+    </header>
+
+    <main class="container">
+      <!-- اطلاعیه -->
+      <section class="info-box">
+        <h2><i class="bx bxs-info-circle"></i> شرایط و ضوابط</h2>
+        <ul>
+          <li>مدرک تحصیلی: حداقل کارشناسی حسابداری/مدیریت مالی</li>
+          <li>حداقل ۲ سال سابقه مفید</li>
+          <li>تسلط به Excel و نرم‌افزارهای حسابداری</li>
+        </ul>
+      </section>
+
+      <!-- فرم -->
+      <form id="applyForm" class="form-card">
+        <h2><i class="bx bxs-pencil"></i> ثبت درخواست</h2>
+        <input type="hidden" name="personnelId">
+        <div class="form-grid">
+          <label>
+            نام و نام‌خانوادگی
+            <input type="text" name="fullname" required readonly>
+          </label>
+          <label>
+            شماره پرسنلی
+            <input type="text" name="personnelIdDisplay" readonly>
+          </label>
+          <label>
+            شماره موبایل
+            <input type="tel" name="mobile" pattern="09\d{9}" required>
+          </label>
+          <label>
+            آپلود رزومه (PDF ≤ 2MB)
+            <input type="file" name="resume" accept=".pdf" required>
+          </label>
+        </div>
+        <label>
+          توضیحات تکمیلی
+          <textarea name="note" rows="3" placeholder="نکات یا مهارت‌های خاص..."></textarea>
+        </label>
+        <button type="submit" class="btn">ارسال درخواست</button>
+        <p id="formMsg" class="msg hidden"></p>
+      </form>
+
+      <!-- QR اشتراک -->
+      <section class="qr-box">
+        <h3>اشتراک‌گذاری فراخوان</h3>
+        <img id="qrImg" alt="QR Code">
+      </section>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
